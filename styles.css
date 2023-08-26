@@ -1,0 +1,29 @@
+@keyframes spinAndColorChange {
+    0% {
+      transform: rotate(0deg);
+      background-color: red;
+    }
+    25% {
+      background-color: blue;
+    }
+    50% {
+      transform: rotate(180deg);
+      background-color: green;
+    }
+    75% {
+      background-color: yellow;
+    }
+    100% {
+      transform: rotate(360deg);
+      background-color: red;
+    }
+  }
+  
+.spin-box {
+width: 100px;
+height: 100px;
+margin: auto;
+border: 16px solid #f3f3f3;
+border-top: 16px solid #000000;
+animation: spinAndColorChange 5s linear infinite;
+}
