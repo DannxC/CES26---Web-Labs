@@ -1,0 +1,43 @@
+/* 1. Fundo e Cores: */
+
+body {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+
+/* 2. Espaçamento e Margens: */
+
+p, h1, ul {
+    margin: 20px;
+    line-height: 1.6;
+}
+
+
+/* 3. Títulos e Fontes: */
+
+h1 {
+    font-size: 2em;
+}
+
+
+/* 4. Botões ou Links: */
+
+.navegacao a {
+    padding: 2px 5px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+
+/* 5. Responsividade: */
+
+@media (max-width: 768px) {
+    .navegacao a {
+        display: block;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+}
