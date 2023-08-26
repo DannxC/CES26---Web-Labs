@@ -1,0 +1,31 @@
+/* Estilos específicos para a página de visitantes */
+.visitantes {
+    background-color: #cccccc;
+}
+
+.visitantes h2 {
+    font-size: 1.5em;
+    margin-top: 30px;
+}
+
+.visitantes nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.visitantes nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.visitantes nav ul li a {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.visitantes nav ul li a:hover {
+    background-color: #0056b3;
+}

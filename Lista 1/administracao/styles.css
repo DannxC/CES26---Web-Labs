@@ -1,0 +1,31 @@
+/* Estilos específicos para a página de administração */
+.administracao {
+    background-color: #d9d9d9;
+}
+
+.administracao h2 {
+    font-size: 1.5em;
+    margin-top: 30px;
+}
+
+.administracao nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.administracao nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.administracao nav ul li a {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.administracao nav ul li a:hover {
+    background-color: #0056b3;
+}
