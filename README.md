@@ -1,6 +1,5 @@
 ﻿# CES26---Web-Labs
 
-
 ## 1a série de exercícios (individual)
 
 Construa um conjunto de páginas web com informações sobre a tua
