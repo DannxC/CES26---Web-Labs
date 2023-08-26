@@ -1,6 +1,6 @@
 /* Estilos específicos para a página de professores */
 .professores {
-    background-color: #e6e6e6;
+    background-color: #e6f2ff;
 }
 
 .professores h2 {
@@ -21,11 +21,7 @@
 .professores nav ul li a {
     background-color: #007bff;
     color: white;
-    padding: 10px;
+    padding: 2px 5px;
     border-radius: 5px;
     text-decoration: none;
-}
-
-.professores nav ul li a:hover {
-    background-color: #0056b3;
 }
