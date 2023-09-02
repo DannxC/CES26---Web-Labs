@@ -13,7 +13,7 @@ const updateInterval = 1000 / ups; // Tempo em ms para cada atualização do mou
 let lastUpdateTime = Date.now();  // Para armazenar o último momento em que o mousemove foi atualizado
 let lastDrawTime = Date.now();   // Para armazenar o último momento em que o canvas foi desenhado
 
-// Coordenadas/Tamanhos iniciais do avião e do míssil
+// Variáveis avião
 let airplaneX = 50;
 let airplaneY = 50;
 let airplaneWidth = 50;
@@ -21,7 +21,17 @@ let airplaneHeight = 20;
 let airplaneSpeed = 10;
 let airplaneAngle = 0;  // Ângulo atual do avião em radianos
 let airplaneAngularSpeed = 0.1;  // Velocidade de rotação do avião em radianos por frame
+let airplaneAlive = true;   // Flag para indicar se o avião está vivo
+const airplaneImage = new Image();
+airplaneImage.src = './assets/airplane.png';
+airplaneImage.onload = function() {      // Quando a imagem do avião for carregada
+    airplaneWidth = this.width/2;
+    airplaneHeight = this.height/2;
+};
+const explosionImage = new Image();
+explosionImage.src = './assets/explosion.png';
 
+// Variáveis míssil
 let missileX = 200;
 let missileY = 200;
 let missileWidth = 20;
@@ -29,6 +39,17 @@ let missileHeight = 10;
 let missileSpeed = 8;
 let missileAngle = 0;  // Ângulo atual do míssil em radianos
 let missileAngularSpeed = 0.2;  // Velocidade de rotação do míssil em radianos por frame
+let missileFired = false;   // Flag para indicar se o míssil foi disparado
+let missileAlive = true;   // Flag para indicar se o avião está vivo
+let explosionSounded = false;   // Flag para indicar se o som da explosão já foi tocado
+const explosionSound = new Audio('./assets/explosion.mp3');
+const missileFiringSound = new Audio('./assets/missile_firing.mp3');
+const missileImage = new Image();
+missileImage.src = './assets/missile.png';
+missileImage.onload = function() {      // Quando a imagem do míssil for carregada
+    missileWidth = this.width/2;
+    missileHeight = this.height/2;
+};
 
 // Variáveis para armazenar a última posição conhecida do mouse
 let lastMouseX = airplaneX;
@@ -40,9 +61,14 @@ let lastMouseY = airplaneY;
 function drawAirplane() {
     ctx.save(); // Salva o contexto atual
     ctx.translate(airplaneX, airplaneY);
-    ctx.rotate(airplaneAngle);
-    ctx.fillStyle = "blue";
-    ctx.fillRect(-airplaneWidth / 2, -airplaneHeight / 2, airplaneWidth, airplaneHeight);
+    ctx.rotate(airplaneAngle + Math.PI / 2);
+    if (airplaneAlive) {
+        ctx.drawImage(airplaneImage, -airplaneWidth / 2, -airplaneHeight / 2, airplaneWidth, airplaneHeight);
+    } else {
+        airplaneWidth = explosionImage.width/2;
+        airplaneHeight = explosionImage.height/2;
+        ctx.drawImage(explosionImage, -airplaneWidth / 2, -airplaneHeight / 2, airplaneWidth, airplaneHeight);
+    }
     ctx.restore();  // Restaura o contexto para o estado antes de salvar
 }
 
@@ -50,9 +76,13 @@ function drawAirplane() {
 function drawMissile() {
     ctx.save(); // Salva o contexto atual
     ctx.translate(missileX, missileY);
-    ctx.rotate(missileAngle);
-    ctx.fillStyle = "red";
-    ctx.fillRect(-missileWidth / 2, -missileHeight / 2, missileWidth, missileHeight);
+    ctx.rotate(missileAngle + Math.PI / 2);
+    if (missileAlive) {
+        ctx.drawImage(missileImage, -missileWidth / 2, -missileHeight / 2, missileWidth, missileHeight);
+    } else if (!explosionSounded) {
+        explosionSound.play();  // Toca o som da explosão
+        explosionSounded = true;
+    }
     ctx.restore();  // Restaura o contexto para o estado antes de salvar
 }
 
@@ -79,6 +109,17 @@ canvas.addEventListener("mousemove", function (event) {
     lastMouseY = event.clientY - rect.top;
 });
 
+// Previne o menu de contexto padrão de aparecer ao clicar com o botão direito
+canvas.addEventListener("contextmenu", function (event) {
+    event.preventDefault();
+    missileFired = true;
+    if (missileAlive) {
+        missileFiringSound.play()  // Toca o som do míssil sendo disparado
+    }
+});
+
+
+
 // Função para normalizar um ângulo para o intervalo [-π, π]
 function normalizeAngle(angle) {
     while (angle < -Math.PI) angle += 2 * Math.PI;
@@ -88,6 +129,10 @@ function normalizeAngle(angle) {
 
 // Atualiza a posição do avião com base na última posição conhecida do mouse
 function updateAirplanePosition() {
+    if (!airplaneAlive) {
+        return
+    }
+
     const dx = lastMouseX - airplaneX;
     const dy = lastMouseY - airplaneY;
 
@@ -97,7 +142,7 @@ function updateAirplanePosition() {
     const angleDifference = normalizeAngle(targetAngle - airplaneAngle);
 
     // Atualiza variáveis de posição e de ângulo do avião apenas quando ele está suficientemente longe do target.
-    if (distance > airplaneSpeed/10) {
+    if (distance > airplaneSpeed / 10) {
         // Atualiza a posição do avião
         if (distance > airplaneSpeed) {
             airplaneX += airplaneSpeed * Math.cos(airplaneAngle);
@@ -105,8 +150,8 @@ function updateAirplanePosition() {
         } else {    // Evita a divisão por zero
             airplaneX += (dx / distance) * Math.cos(airplaneAngle) * distance;
             airplaneY += (dy / distance) * Math.sin(airplaneAngle) * distance;
-        }    
-        
+        }
+
         // Atualiza o ângulo do avião
         if (Math.abs(angleDifference) > airplaneAngularSpeed) {
             airplaneAngle += airplaneAngularSpeed * Math.sign(angleDifference);
@@ -118,6 +163,11 @@ function updateAirplanePosition() {
 
 // Atualiza a posição do míssil com base na última posição conhecida do avião
 function updateMissilePosition() {
+    // Não atualiza a posição do míssil se ele não foi disparado ou se o avião está morto
+    if (!missileFired || !missileAlive) {
+        return;
+    }
+
     const dx = airplaneX - missileX;
     const dy = airplaneY - missileY;
 
@@ -127,7 +177,7 @@ function updateMissilePosition() {
     const angleDifference = normalizeAngle(targetAngle - missileAngle);  // Normaliza a diferença de ângulo
 
     // Atualiza a posição do míssil apenas quando ele está suficientemente longe do target.
-    if (distance > missileSpeed / 10) {
+    if (distance > airplaneHeight / 1.7) {
         // Atualiza a posição do míssil
         if (distance > missileSpeed) {
             missileX += missileSpeed * Math.cos(missileAngle);
@@ -136,13 +186,18 @@ function updateMissilePosition() {
             missileX += (dx / distance) * Math.cos(missileAngle) * distance;
             missileY += (dy / distance) * Math.sin(missileAngle) * distance;
         }
-        
+
         // Atualiza o ângulo do míssil
         if (Math.abs(angleDifference) > missileAngularSpeed) {
             missileAngle += missileAngularSpeed * Math.sign(angleDifference);
-        } else if (Math.abs(angleDifference) > missileAngularSpeed / 10){
+        } else if (Math.abs(angleDifference) > missileAngularSpeed / 10) {
             missileAngle = targetAngle;
-        }    
+        }
+    }
+    else {
+        missileFired = false;
+        airplaneAlive = false;
+        missileAlive = false;
     }
 }
 
