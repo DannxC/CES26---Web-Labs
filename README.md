@@ -1,5 +1,7 @@
 ﻿# CES26---Web-Labs
 
+Você pode verificar o projeto deployado aqui: [WebSite](https://dannxc.github.io/CES26---Web-Labs/)
+
 ## 1a série de exercícios (individual)
 
 Construa um conjunto de páginas web com informações sobre a tua
