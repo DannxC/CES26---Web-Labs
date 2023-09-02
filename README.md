@@ -20,3 +20,24 @@ Disponibilizar o resultado usando Github Pages.
 A Documentação do exercício deverá ser
 disponibilizada no Github. Incluir descrição do processo utilizado para a
 elaboração do trabalho. Relatar dificuldades e soluções encontradas.
+
+
+## 2a série de exercícios (individual)
+
+2.a Série de Exercícios de CES 26 - 2023
+Utilizando o elemento Canvas do HTML5 e Javascript, construa um programa que implemente a animação descrita abaixo:
+
+1) Um avião acompanha o cursor do mouse
+![airplane.png](./Lista%202/assets/airplane.png)
+
+1) Um míssel fica apontando para a posião do avião
+![missile.png](./Lista%202/assets/missile.png)
+
+1) Ao apertar o botão direito do mouse, o míssil é disparado e vai atrás do avião.
+
+2) Ao atingir o avião, este explode.
+
+3) Inclua efeitos sonoros e comandos para habilitar e desabilitar os sons.
+
+Disponibilize o resultado final no github pages.
+O código fonte e documentação devem ser entregues através do github.
