@@ -1,3 +1,29 @@
 .selected {
-    background-color: yellow;
+    background-color: yellow !important;    /* Garante que a cor de fundo seja amarela */
+}
+
+#container {
+    border: 2px solid black;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+#root {
+    font-weight: bold;
+    background-color: #eeeeee;
+    min-height: 50px;
+    min-width: 50px;
+    border: 1px solid #ccc;  /* para visualização */
+}
+
+#control-panel {
+    background-color: #f2f2f2;
+    border-radius: 8px;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+#control-panel button,
+#control-panel input {
+    margin-right: 10px;
 }
