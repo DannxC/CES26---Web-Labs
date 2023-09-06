@@ -2,10 +2,17 @@
     background-color: yellow !important;    /* Garante que a cor de fundo seja amarela */
 }
 
+#main-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 #container {
     border: 2px solid black;
     padding: 20px;
     margin-bottom: 20px;
+    flex: 0.8;
 }
 
 #root {

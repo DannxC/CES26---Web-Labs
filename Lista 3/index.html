@@ -3,8 +3,11 @@
 
 <head>
     <title>Editor de Árvore DOM</title>
+
     <!-- Incluindo jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Incluindo Cytoscape.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.19.1/cytoscape.min.js"></script>
     <script src="main.js"></script>
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
@@ -12,14 +15,17 @@
 <body>
     <h1>Editor de Árvore DOM</h1>
     <h2>Container</h2>
-    <div id="container">
-        <div id="root">
-            <p>Parágrafo 1</p>
-            <div>
-                <p>Parágrafo 2</p>
+    <div id="main-wrapper">
+        <div id="container">
+            <div id="root">
+                <p>Parágrafo 1</p>
+                <div>
+                    <p>Parágrafo 2</p>
+                </div>
+                <span>Texto</span>
             </div>
-            <span>Texto</span>
         </div>
+        <div id="cy"></div>
     </div>
 
     <h2>Painel de Controle</h2>
