@@ -52,3 +52,15 @@ Usando JQuery, faça um programa editor de uma árvore DOM.
 2) O usuário poderá remover, mudar propriedades do elemento, ou inserir um novo elemento como filho do elemento selecionado.
    
 3) Se o elemento removido for pai de outros elementos, todo o ramo de elementos também terá de ser removido.
+
+
+## 4a série de exercícios (individual)
+Utilizando Node e o módulo Express, desenvolva uma aplicação no servidor que atenda os seguintes requisitos: 
+
+1) Permite a exibição de arquivos estáticos. 
+
+2) Permite a realização de upload de arquivo enviado através do comando POST. 
+
+3) Processa dados de um formulário enviados via comando GET. 
+
+4) Suporta uma aplicação AJAX, que ao click de ouse em um botão, acessa um conjunto de dados em JSON e os exibe no lugar de um parágrafo em uma página HTML.

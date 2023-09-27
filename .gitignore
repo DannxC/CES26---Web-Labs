@@ -1,1 +1,15 @@
 *.pdf
+
+
+
+# Lista 4
+Lista 4/node_modules/
+Lista 4/.env
+Lista 4/logs/
+Lista 4/*.log
+Lista 4/uploads/
+Lista 4/build/
+Lista 4/dist/
+
+# Lista 4 - macOS system files
+.DS_Store
