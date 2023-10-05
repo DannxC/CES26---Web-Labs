@@ -28,6 +28,10 @@ Lista 5/backend/logs/
 Lista 5/backend/*.log
 Lista 5/backend/yarn.lock
 
+# Ignorar toda a pasta images_cities (com a excecao de sydney para efeitos de demonstracao)
+Lista 5/backend/images_cities/*
+!Lista 5/backend/images_cities/sydney.*
+
 
 
 

@@ -1,0 +1,52 @@
+[
+  {
+    "name": "Dubai",
+    "info": "Conhecida pelos seus arranha-céus, incluindo o Burj Khalifa.",
+    "img": "http://localhost:3001/images_cities/dubai.jpg"
+  },
+  {
+    "name": "London",
+    "info": "Capital do Reino Unido, conhecida pelo Big Ben e pela família real.",
+    "img": "http://localhost:3001/images_cities/london.jpg"
+  },
+  {
+    "name": "Los Angeles",
+    "info": "Conhecida por Hollywood e o estilo de vida da Califórnia.",
+    "img": "http://localhost:3001/images_cities/los_angeles.jpg"
+  },
+  {
+    "name": "New York",
+    "info": "Conhecida como a 'Big Apple', é a cidade mais populosa dos EUA.",
+    "img": "http://localhost:3001/images_cities/new_york.webp"
+  },
+  {
+    "name": "Paris",
+    "info": "Conhecida como 'Cidade Luz', é famosa pela Torre Eiffel.",
+    "img": "http://localhost:3001/images_cities/paris.jpeg"
+  },
+  {
+    "name": "Rio de Janeiro",
+    "info": "Conhecida pelo Cristo Redentor e pelo Carnaval.",
+    "img": "http://localhost:3001/images_cities/rio_de_janeiro.jpeg"
+  },
+  {
+    "name": "Rome",
+    "info": "Capital da Itália, conhecida pelo Coliseu.",
+    "img": "http://localhost:3001/images_cities/rome.jpg"
+  },
+  {
+    "name": "Shanghai",
+    "info": "Um dos centros financeiros globais, localizado na China.",
+    "img": "http://localhost:3001/images_cities/shanghai.jpg"
+  },
+  {
+    "name": "Sydney",
+    "info": "Conhecida pela Sydney Opera House e pelas belas praias.",
+    "img": "http://localhost:3001/images_cities/sydney.jpeg"
+  },
+  {
+    "name": "Tokyo",
+    "info": "A capital do Japão é a cidade mais populosa do mundo.",
+    "img": "http://localhost:3001/images_cities/tokyo.jpeg"
+  }
+]
