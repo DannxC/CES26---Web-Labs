@@ -2,9 +2,9 @@
 
 Você pode verificar o projeto deployado aqui: [WebSite](https://dannxc.github.io/CES26---Web-Labs/)
 
+## Listas
 
-
-## 1a série de exercícios (individual)
+### 1a série de exercícios (individual)
 Construa um conjunto de páginas web com informações sobre a tua
 Escola do 2.o Grau.
 
@@ -24,7 +24,7 @@ elaboração do trabalho. Relatar dificuldades e soluções encontradas.
 
 
 
-## 2a série de exercícios (individual)
+### 2a série de exercícios (individual)
 Utilizando o elemento Canvas do HTML5 e Javascript, construa um programa que implemente a animação descrita abaixo:
 
 1) Um avião acompanha o cursor do mouse
@@ -44,7 +44,7 @@ O código fonte e documentação devem ser entregues através do github.
 
 
 
-## 3a série de exercícios (individual)
+### 3a série de exercícios (individual)
 Usando JQuery, faça um programa editor de uma árvore DOM.
 
 1) Com o Mouse é possível selecionar um elemento. O elemento selecionado deve muda de cor.
@@ -54,7 +54,7 @@ Usando JQuery, faça um programa editor de uma árvore DOM.
 3) Se o elemento removido for pai de outros elementos, todo o ramo de elementos também terá de ser removido.
 
 
-## 4a série de exercícios (individual)
+### 4a série de exercícios (individual)
 Utilizando Node e o módulo Express, desenvolva uma aplicação no servidor que atenda os seguintes requisitos: 
 
 1) Permite a exibição de arquivos estáticos. 
@@ -64,3 +64,28 @@ Utilizando Node e o módulo Express, desenvolva uma aplicação no servidor que 
 3) Processa dados de um formulário enviados via comando GET. 
 
 4) Suporta uma aplicação AJAX, que ao click de ouse em um botão, acessa um conjunto de dados em JSON e os exibe no lugar de um parágrafo em uma página HTML.
+
+
+### 5a série de exercícios (individual) - 2023
+Utilizando React, Node e o módulo Express, desenvolva uma aplicação com os seguintes requisitos:
+
+1) A página principal exibe uma lista com nome de cidades.
+   
+2) O usuário pode selecionar com o mouse uma cidade da lista.
+
+3) Ao selecionar a cidade, a posição da cidade na tabela se expande e aparece uma foto e um texto com dados da cidade.
+   
+4) O usuário pode com o mouse fechar as informações da cidade.
+   
+5) Os dados da cidade são armazenados no servidor Node como dados JSON e carregados somente quando o usuário fazer a seleção na tela.
+
+
+
+
+## Projeto - Travel Planner
+1) Conteúdo
+- **Frontend**: Criou-se uma SPA (Single Page App) que usa React e possui componentes que usam gráficos e animações em Javascript e HTML 5.
+- **Backend**: Criou-se uma aplicação usando servidor NodeJs. Utilizou-se de um módulo que acessa recursos de um site externo (no caso, o ChatGPT).
+
+2) Explicação
+O projeto "Travel Planner" consiste em um site single page em que a pessoa pode digitar uma cidade em um chat. Essa cidade será interpretada pelo ChatGPT, que retornará um template sobre um planejamento de viagem para aquela cidade, com horário, local e breve descrição dos locais selecionados.

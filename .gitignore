@@ -13,3 +13,25 @@ Lista 4/dist/
 
 # Lista 4 - macOS system files
 .DS_Store
+
+
+
+# Lista 5 - React & Node
+Lista 5/frontend/node_modules/
+Lista 5/frontend/.env
+Lista 5/frontend/.cache/
+Lista 5/frontend/build/
+Lista 5/frontend/yarn.lock
+Lista 5/backend/node_modules/
+Lista 5/backend/.env
+Lista 5/backend/logs/
+Lista 5/backend/*.log
+Lista 5/backend/yarn.lock
+
+
+
+
+
+# Project - Travel Planner
+Project - Travel Planner/node_modules/
+Project - Travel Planner/.env
