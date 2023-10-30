@@ -54,6 +54,7 @@ Usando JQuery, faça um programa editor de uma árvore DOM.
 3) Se o elemento removido for pai de outros elementos, todo o ramo de elementos também terá de ser removido.
 
 
+
 ### 4a série de exercícios (individual)
 Utilizando Node e o módulo Express, desenvolva uma aplicação no servidor que atenda os seguintes requisitos: 
 
@@ -64,6 +65,7 @@ Utilizando Node e o módulo Express, desenvolva uma aplicação no servidor que 
 3) Processa dados de um formulário enviados via comando GET. 
 
 4) Suporta uma aplicação AJAX, que ao click de ouse em um botão, acessa um conjunto de dados em JSON e os exibe no lugar de um parágrafo em uma página HTML.
+
 
 
 ### 5a série de exercícios (individual) - 2023
@@ -78,6 +80,11 @@ Utilizando React, Node e o módulo Express, desenvolva uma aplicação com os se
 4) O usuário pode com o mouse fechar as informações da cidade.
    
 5) Os dados da cidade são armazenados no servidor Node como dados JSON e carregados somente quando o usuário fazer a seleção na tela.
+
+
+
+### 6a série de exercícios (individual) - 2023
+Utilizando React e Redux (obrigatoriamente), implemente uma calculadora com as quatro operações aritméticas básicas.  
 
 
 
