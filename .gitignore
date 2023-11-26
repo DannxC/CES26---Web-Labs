@@ -1,5 +1,6 @@
 *.pdf
-
+*/node_modules/
+*/.env
 
 
 # Lista 4
@@ -32,10 +33,3 @@ Lista 5/backend/yarn.lock
 Lista 5/backend/images_cities/*
 !Lista 5/backend/images_cities/sydney.*
 
-
-
-
-
-# Project - Travel Planner
-Project - Travel Planner/node_modules/
-Project - Travel Planner/.env
