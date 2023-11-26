@@ -1,35 +1,3 @@
 *.pdf
 */node_modules/
 */.env
-
-
-# Lista 4
-Lista 4/node_modules/
-Lista 4/.env
-Lista 4/logs/
-Lista 4/*.log
-Lista 4/uploads/
-Lista 4/build/
-Lista 4/dist/
-
-# Lista 4 - macOS system files
-.DS_Store
-
-
-
-# Lista 5 - React & Node
-Lista 5/frontend/node_modules/
-Lista 5/frontend/.env
-Lista 5/frontend/.cache/
-Lista 5/frontend/build/
-Lista 5/frontend/yarn.lock
-Lista 5/backend/node_modules/
-Lista 5/backend/.env
-Lista 5/backend/logs/
-Lista 5/backend/*.log
-Lista 5/backend/yarn.lock
-
-# Ignorar toda a pasta images_cities (com a excecao de sydney para efeitos de demonstracao)
-Lista 5/backend/images_cities/*
-!Lista 5/backend/images_cities/sydney.*
-

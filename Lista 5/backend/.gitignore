@@ -1,0 +1,5 @@
+/.env
+/logs/
+/*.log
+/yarn.lock
+/images_cities/*
