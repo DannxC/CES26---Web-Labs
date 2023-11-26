@@ -88,6 +88,12 @@ Utilizando React e Redux (obrigatoriamente), implemente uma calculadora com as q
 
 
 
+### 7a série de exercícios (individual) - 2023
+Crie um exemplo que demonstre o funcionamento do mecanismo de roteamento e o uso de componentes Forms do Angular. O exemplo deve usar um servidor Node para armazenar dados coletados.
+Faça uma comparação da solução construída com uma solução em React.
+
+
+
 
 ## Projeto - Travel Planner
 1) Conteúdo

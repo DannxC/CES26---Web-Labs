@@ -5,16 +5,32 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormularioComponent } from './formulario/formulario.component';
 
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+
+import { RouterModule, Routes } from '@angular/router';
+import { HomeComponent } from './home/home.component';
+
+import { AboutComponent } from './about/about.component';   // My code
+
+
+const routes: Routes = [
+  { path: 'home', component: HomeComponent },
+  { path: 'about', component: AboutComponent },
+  // Adicione outras rotas conforme necessário
+];
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    FormularioComponent
+    FormularioComponent,
+    HomeComponent,
+    AboutComponent
   ],
   imports: [
+    RouterModule.forRoot(routes), // My code
+    ReactiveFormsModule,          // My code
     BrowserModule,
     AppRoutingModule,
     FormsModule,
