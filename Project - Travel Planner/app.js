@@ -128,9 +128,11 @@ app.get('/auth/google/callback', async (req, res) => {
         const { tokens } = await oauth2Client.getToken(code);
         oauth2Client.setCredentials(tokens);
 
+        // Salvando o email do usuário na sessão
+        req.session.user = { loggedIn: true };
 
         // Registrar na sessão que o usuário está logado
-        req.session.user = { loggedIn: true };
+        //req.session.user = { loggedIn: true };
 
 
         res.redirect('/'); // Redirecionar para a página principal ou de sucesso
@@ -144,6 +146,7 @@ app.get('/auth/google/callback', async (req, res) => {
 app.get('/auth/status', (req, res) => {
     console.log("Acessando /auth/status");
     console.log("req.session:", req.session);
+    console.log("req.session.user:", req.session.user);
     try {
         if (req.session.user) {
             // res.json({ loggedIn: true, email: req.session.user.email });
