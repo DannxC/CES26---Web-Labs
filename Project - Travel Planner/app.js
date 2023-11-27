@@ -4,6 +4,9 @@ const session = require('express-session');
 const dotenv = require('dotenv');
 const { Configuration, OpenAIApi } = require("openai");
 const {OAuth2Client} = require('google-auth-library');
+const helmet = require('helmet');
+
+
 
 dotenv.config();
 
@@ -22,6 +25,7 @@ const oauth2Client = new OAuth2Client(CLIENT_ID, CLIENT_SECRET, REDIRECT_URI);
 let prompt = "";
 let plannerResponse = "";
 
+// App uses
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({
@@ -31,6 +35,29 @@ app.use(session({
     cookie: { secure: false }   // Se verdadeiro, só envia o cookie sobre HTTPS
     // Nota: Em produção, defina 'secure' como true e forneça outras opções de cookie conforme necessário
 }));
+app.use(helmet());
+app.use(                // Configuração do Content Security Policy
+    helmet.contentSecurityPolicy({
+      directives: {
+        defaultSrc: ["'self'"], // Limita a carregar recursos apenas do próprio domínio
+        scriptSrc: ["'self'", "http://localhost:3000"], // Domínios permitidos para carregar scripts
+        // Adicione outras diretivas conforme necessário
+      },
+    })
+  );
+  
+  // Configuração do X-Frame-Options para prevenir Clickjacking
+  app.use(
+    helmet.frameguard({
+      action: 'deny', // Impede que a página seja colocada em um <iframe>
+    })
+  );
+  
+  // Remover o cabeçalho X-Powered-By para esconder informações sobre o servidor
+  app.use(helmet.hidePoweredBy()
+);
+
+
 
 // Starting a new session of openai
 const configuration = new Configuration({
@@ -102,23 +129,8 @@ app.get('/auth/google/callback', async (req, res) => {
         oauth2Client.setCredentials(tokens);
 
 
-        // Pegar o email do usuario e salvar na sessao atual (express-session) 
-        // // Criar um cliente OAuth2 com os tokens
-        // const oauth2 = google.oauth2({
-        //     auth: oauth2Client,
-        //     version: 'v2'
-        // });
-
-        // // Obter as informações do usuário
-        // const userInfo = await oauth2.userinfo.get();
-        // const userEmail = userInfo.data.email;
-
-        // // Salvar o e-mail do usuário na sessão
-        // req.session.user = { email: userEmail };
-
         // Registrar na sessão que o usuário está logado
         req.session.user = { loggedIn: true };
-        //req.session.loggedIn = true;
 
 
         res.redirect('/'); // Redirecionar para a página principal ou de sucesso

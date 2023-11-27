@@ -2,7 +2,41 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+}
+
+h2 {
+    text-align: center;
+    padding-bottom: 15px;
+}
+
+footer {
+    background-color: #3f79b3;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 0px;
+}
+
+.main-title {
+    font-size: 40px;
+    font-weight: 650;
+    margin: 40px;
+}
+
+.brand-name {
+    color: white;
+    font-size: 25px;
+    font-weight: 500;
+    margin-left: 15px;
+}
+
+.brand-name:hover {
+    color: #b0cfee;
+    text-decoration: none;
 }
 
 .container {
@@ -13,41 +47,51 @@ body {
 
 .chat-section, .planner-section {
     border: 1px solid #ccc;
+    border-radius: 10px;
     padding: 20px;
     width: 45%;
     background-color: #fff;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
-h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
+.chat-section, .planner-section {
+    border: none;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
 }
 
 #chat-box, #planner-box {
+    background-color: #d6dfe8;;
     height: 300px;
     overflow-y: scroll;
-    border: 1px solid #ccc;
+    border: 1px solid #cccccc;
+    border-radius: 15px;
     padding: 10px;
     margin-bottom: 10px;
 }
 
-input[type="text"] {
-    width: 80%;
-    padding: 10px;
-    margin-right: 10px;
+#signin-btn {
+    background-color: #b0cfee;
+    margin: 5px;
 }
 
-button {
-    padding: 11px 20px;
+input[type="text"] {
+    background-color: #d6dfe8;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0px;
+}
+
+#send-btn {
+    background-color: #a7c9e8;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    padding: 10px 20px;
     cursor: pointer;
 }
 
-
-
-
-.carousel-inner .carousel-item img {
-    width: 300px !important;
-    height: auto !important;
-    margin: auto !important;
+#send-btn:hover {
+    background-color: #7fb6ee;
+    color: white;
 }
