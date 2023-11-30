@@ -1,0 +1,11 @@
+<div class="log-box">
+  <h3>Mensagens de Log</h3>
+
+  <!-- Campo de entrada e botão para enviar log -->
+  <input type="text" [(ngModel)]="logInput" placeholder="Digite uma mensagem de log">
+  <button (click)="enviarLog()">Enviar Log</button>
+
+  <ul>
+    <li *ngFor="let msg of logMessages">{{ msg }}</li>
+  </ul>
+</div>

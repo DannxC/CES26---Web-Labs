@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { Router } from '@angular/router'; // Importe o Router
+
 
 @Component({
   selector: 'app-home',
@@ -7,19 +8,17 @@ import { FormGroup, FormControl } from '@angular/forms';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  meuFormulario: FormGroup;  // Declaração da variável para o formulário
 
-  constructor() {
-    // Inicialização do formulário no construtor
-    this.meuFormulario = new FormGroup({
-      campo1: new FormControl(''), // Exemplo de campo inicializado como string vazia
-      // Adicione outros campos do formulário aqui, se necessário
-    });
+  constructor(private router: Router) { // Injete o Router no construtor
+
   }
-
   ngOnInit(): void {
     // Aqui você pode adicionar lógicas adicionais que precisam ser executadas quando o componente é inicializado
   }
 
+  // Método para ir para a página do formulário 
+  goToForm(): void {
+    this.router.navigate(['/formulario']); // Use o Router para navegar para a rota do formulário
+  }
   // Adicione outros métodos necessários para a lógica do seu componente
 }

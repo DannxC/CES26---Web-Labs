@@ -1,7 +1,14 @@
+# Ignorar arquivos PDF
 *.pdf
-node_modules
-*/.env
 
+# Diretórios de dependências
+node_modules/
+
+# Arquivos de configuração sensíveis
 .env
-.angular
-.vscode
+
+# Pastas de configuração do ambiente de desenvolvimento
+.angular/
+.vscode/
+.log
+dist/
